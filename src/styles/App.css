@@ -1,0 +1,48 @@
+/* App.css */
+nav {
+  display: flex;
+  justify-content: space-between; /* Distribute space between left and right */
+  align-items: center;
+  padding: 1rem;
+  background-color: #2d3748; /* Dark background */
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem; /* Space between the list items */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #a0aec0; /* Light hover color */
+}
+
+.language-switcher {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.language-switcher button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.language-switcher button:hover {
+  color: #a0aec0;
+}

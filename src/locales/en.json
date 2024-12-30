@@ -1,0 +1,36 @@
+{
+    "login": {
+      "title": "Login",
+      "username": "Username",
+      "password": "Password",
+      "button": "Login"
+    },
+    "addBook": {
+      "title": "Title",
+      "author": "Author",
+      "genre": "Genre",
+      "publication_year": "Publication Year",
+      "rating": "Rating",
+      "is_borrowed": "Is Borrowed",
+      "add_book_button": "Add Book"
+    },
+
+  "bookList": {
+    "title": "Books List",
+    "author": "Author",
+    "genre": "Genre",
+    "rating": "Rating",
+    "is_borrowed": "Is Borrowed",
+    "yes": "Yes",
+    "no": "No",
+    "loading": "Loading...",
+    "error": "Error occurred while fetching books.",
+    "no_books": "No books available.",
+    "view_details": "View Details",
+    "show_details": "Show Details",
+    "hide_details": "Hide Details",
+    "publication_year": "Publication Year"
+  }
+  
+  }
+  

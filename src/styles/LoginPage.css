@@ -1,0 +1,44 @@
+/* Login page container */
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Form inputs */
+input {
+  border: 1px solid #ddd;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* Error message */
+.text-red-500 {
+  color: #ef4444;
+}
+
+/* Button styles */
+button {
+  padding: 12px;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #93c5fd;
+}
+
+/* Focus state for inputs and button */
+input:focus,
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}

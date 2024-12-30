@@ -1,0 +1,37 @@
+/* Additional styles for accessibility and improved layout */
+.book-item {
+  padding: 15px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.book-item:hover {
+  background-color: #f1f1f1;
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(38, 99, 235, 0.5);
+}
+
+.book-details {
+  background-color: #fafafa;
+  margin-top: 10px;
+  border-top: 2px solid #ddd;
+  padding: 15px;
+}

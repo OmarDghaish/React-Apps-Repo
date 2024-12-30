@@ -1,0 +1,34 @@
+{
+    "login": {
+      "title": "تسجيل الدخول",
+      "username": "اسم المستخدم",
+      "password": "كلمة المرور",
+      "button": "تسجيل الدخول"
+    },
+    "addBook": {
+      "title": "العنوان",
+      "author": "المؤلف",
+      "genre": "النوع",
+      "publication_year": "سنة النشر",
+      "rating": "التقييم",
+      "is_borrowed": "هل تم استعارة الكتاب",
+      "add_book_button": "إضافة الكتاب"
+    },
+  "bookList": {
+    "title": "قائمة الكتب",
+    "author": "المؤلف",
+    "genre": "النوع",
+    "rating": "التقييم",
+    "is_borrowed": "هل تم استعارة الكتاب",
+    "yes": "نعم",
+    "no": "لا",
+    "loading": "جارٍ التحميل...",
+    "error": "حدث خطأ أثناء جلب البيانات.",
+    "no_books": "لا توجد كتب حالياً.",
+    "view_details": "عرض التفاصيل",
+    "show_details": "عرض التفاصيل",
+    "hide_details": "إخفاء التفاصيل",
+    "publication_year": "سنة النشر"
+  }
+  }
+  
