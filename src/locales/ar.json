@@ -6,13 +6,22 @@
       "button": "تسجيل الدخول"
     },
     "addBook": {
-      "title": "العنوان",
-      "author": "المؤلف",
-      "genre": "النوع",
-      "publication_year": "سنة النشر",
-      "rating": "التقييم",
-      "is_borrowed": "هل تم استعارة الكتاب",
-      "add_book_button": "إضافة الكتاب"
+      "Add":"إضافة",
+    "New Book!": "إضافة كتاب جديد",
+    "title": "العنوان",
+    "author": "المؤلف",
+    "author name": "أدخل اسم المؤلف",
+    "genre": "النوع",
+    "publicationYear": "سنة النشر",
+    "rating": "التقييم",
+    "isBorrowed": "هل تم استعارة الكتاب",
+    "2025, 1, 1": "أدخل تاريخ النشر (سنة)",
+    "0": "أدخل التقييم (0-5)",
+    "addBook.adding": "جارٍ الإضافة...",
+    "ADD BOOK": "إضافة الكتاب",
+    "validationError": "يرجى تعبئة جميع الحقول بشكل صحيح.",
+    "Book Is Added Successfully": "تم إضافة الكتاب بنجاح!",
+    "Book Is Not Added!!!": "تعذر إضافة الكتاب!"
     },
   "bookList": {
     "title": "قائمة الكتب",
@@ -29,6 +38,10 @@
     "show_details": "عرض التفاصيل",
     "hide_details": "إخفاء التفاصيل",
     "publication_year": "سنة النشر"
-  }
+  },
+  "language": {
+  "english": "انكليزي",
+  "arabic": "عربي"
+}
   }
   

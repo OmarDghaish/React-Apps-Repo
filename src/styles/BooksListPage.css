@@ -1,37 +1,101 @@
-/* Additional styles for accessibility and improved layout */
+/* BookListPage.css */
+
+/* Global Styles */
+* {
+  margin: 2;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #11998e, #38ef7d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* Book List Container */
+.book-list-container {
+  width: 100%;
+  max-width: 800px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #1abc9c;
+}
+
+/* Book Items */
 .book-item {
-  padding: 15px;
-  background-color: #f8f8f8;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  margin-bottom: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: 0.3s ease;
 }
 
 .book-item:hover {
-  background-color: #f1f1f1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-button {
-  padding: 8px 12px;
-  background-color: #2563eb;
+.book-item h3 {
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.book-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Action Buttons */
+.book-item button {
+  align-self: flex-start;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
   color: white;
+  background-color: #e74c3c;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
-button:hover {
-  background-color: #1d4ed8;
+.book-item button:hover {
+  background-color: #c0392b;
 }
 
-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(38, 99, 235, 0.5);
-}
+/* Responsive Design */
+@media (max-width: 480px) {
+  .book-list-container {
+    padding: 1.5rem;
+  }
 
-.book-details {
-  background-color: #fafafa;
-  margin-top: 10px;
-  border-top: 2px solid #ddd;
-  padding: 15px;
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .book-item {
+    padding: 0.8rem;
+  }
+
+  .book-item h3 {
+    font-size: 1.2rem;
+  }
+
+  
 }

@@ -37,7 +37,7 @@ const LoginPage: React.FC = () => {
       <h1>{t('login.title')}</h1>
       <form onSubmit={handleLogin} className="space-y-4">
         <div>
-          <label htmlFor="username" className="block font-semibold">{t('login.username')}</label>
+          <label htmlFor="username" className="block font-semibold">{t('')}</label>
           <input
             type="text"
             id="username"
@@ -45,11 +45,11 @@ const LoginPage: React.FC = () => {
             onChange={(e) => setUsername(e.target.value)}
             required
             className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder={t('login.username_placeholder')}
+            placeholder={t('name@gmail.com')}
           />
         </div>
         <div>
-          <label htmlFor="password" className="block font-semibold">{t('login.password')}</label>
+          <label htmlFor="password" className="block font-semibold">{t('')}</label>
           <input
             type="password"
             id="password"
@@ -57,7 +57,7 @@ const LoginPage: React.FC = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
             className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder={t('login.password_placeholder')}
+            placeholder={t('password')}
           />
         </div>
         <button

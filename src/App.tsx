@@ -17,9 +17,9 @@ const App: React.FC = () => {
     <Router>
       <div>
         <nav>
-          <ul>
+          <ul className="nav-links">
             <li>
-              <Link to="/" className="hover:text-gray-400">{i18n.t('addBook.title')}</Link>
+              <Link to="/" className="hover:text-gray-400">{i18n.t('addBook.Add')}</Link>
             </li>
             <li>
               <Link to="/books" className="hover:text-gray-400">{i18n.t('bookList.title')}</Link>
@@ -30,8 +30,12 @@ const App: React.FC = () => {
           </ul>
 
           <div className="language-switcher">
-            <button onClick={() => changeLanguage('en')} className="hover:text-gray-400">EN</button>
-            <button onClick={() => changeLanguage('ar')} className="hover:text-gray-400">AR</button>
+            <button onClick={() => changeLanguage('en')} className="language-button">
+              {i18n.t('english')}
+            </button>
+            <button onClick={() => changeLanguage('ar')} className="language-button">
+              {i18n.t('arabic')}
+            </button>
           </div>
         </nav>
 

@@ -1,48 +1,74 @@
-/* App.css */
+/* App Layout */
+body,
+html {
+  height: 100%;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Navigation Bar */
 nav {
+  height: 4rem;
   display: flex;
-  justify-content: space-between; /* Distribute space between left and right */
+  justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background-color: #2d3748; /* Dark background */
+  padding: 0 1.5rem;
+  background-color: #0b3b5a;
   color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-nav ul {
+.nav-links {
   display: flex;
-  gap: 1.5rem; /* Space between the list items */
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
   list-style: none;
+  gap: 1.5rem;
 }
 
-nav a {
-  text-decoration: none;
+.nav-links li a {
   color: white;
-  transition: color 0.3s;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: #a0aec0; /* Light hover color */
+.nav-links li a:hover {
+  color: #58aece;
 }
 
 .language-switcher {
   display: flex;
   gap: 1rem;
-  align-items: center;
 }
 
-.language-switcher button {
-  background: none;
-  border: none;
+.language-button {
+  background: transparent;
   color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.language-switcher button:hover {
-  color: #a0aec0;
+.language-button:hover {
+  background-color: white;
+  color:#ffffff;
+}
+
+/* Main Content */
+main {
+  margin-top: 4rem; /* Push content below the fixed nav */
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,128 +1,75 @@
-/* .add-book-container */
-.add-book-container {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 30px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease-in-out;
-}
 
-.add-book-container:hover {
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-}
 
-/* Heading */
-h1 {
-  text-align: center;
-  color: #333;
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-}
-
-/* Form */
-form {
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #ff512f, #dd2476);
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
 }
 
-/* Input and Label */
-div {
-  margin-bottom: 20px;
+/* Add Book Container */
+.add-book-container {
+  width: 100%;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  color: #333;
 }
+
+h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #2ba5c0;
+}
+
 
 label {
-  font-weight: bold;
-  margin-bottom: 8px;
   font-size: 1rem;
-  color: #555;
-  display: block;
+  font-weight: 600;
 }
 
-/* Input Fields */
-input {
-  padding: 12px;
+input[type='text'],
+input[type='number'],
+textarea {
+  padding: 0.9rem;
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  outline: none;
-  transition: border-color 0.3s ease-in-out;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: 0.3s ease;
 }
 
-input:focus {
-  border-color: #2563eb; /* Tailwind blue-600 */
-  box-shadow: 0 0 5px rgba(37, 99, 235, 0.5); /* Tailwind blue-600 */
-}
-
-input[type="number"] {
-  -moz-appearance: textfield; /* Hides the up/down spinner in number input */
-}
-
-input[type="checkbox"] {
-  transform: scale(1.2);
-}
-
-/* Button */
+/* Submit Button */
 button {
-  background-color: #2563eb; /* Tailwind blue-600 */
+  padding: 0.9rem;
+  font-size: 1rem;
+  background: linear-gradient(to right, #02c4ff, #00f435);
   color: white;
-  padding: 12px 20px;
-  font-size: 1.1rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  transition: 0.3s ease;
 }
 
 button:hover {
-  background-color: #1e4dbf; /* Darker blue */
+  background: linear-gradient(to right,  #02c4ff, #00f435);
 }
 
-button:disabled {
-  background-color: #b0d0f0;
-  cursor: not-allowed;
-}
-
-/* Success Message */
-.success-message {
-  text-align: center;
-  color: green;
-  font-weight: bold;
-  font-size: 1.1rem;
-  margin-top: 15px;
-}
-
-/* Error States */
-input.error {
-  border-color: #f44336; /* Red for errors */
-}
-
-.error-message {
-  color: #f44336;
-  font-size: 0.875rem;
-  margin-top: 5px;
+.text-red-500 {
+  color: #e74c3c;
+  font-size: 0.9rem;
   text-align: center;
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .add-book-container {
-    padding: 20px;
-    max-width: 100%;
-  }
-
-  h1 {
-    font-size: 1.6rem;
-  }
-
-  button {
-    padding: 10px 15px;
-    font-size: 1rem;
-  }
-
-  input {
-    font-size: 1rem;
+    padding: 1.5rem;
   }
 }

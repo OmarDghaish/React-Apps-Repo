@@ -1,20 +1,29 @@
 {
-    "login": {
-      "title": "Login",
-      "username": "Username",
-      "password": "Password",
-      "button": "Login"
-    },
-    "addBook": {
-      "title": "Title",
-      "author": "Author",
-      "genre": "Genre",
-      "publication_year": "Publication Year",
-      "rating": "Rating",
-      "is_borrowed": "Is Borrowed",
-      "add_book_button": "Add Book"
-    },
-
+  "login": {
+    "title": "Login",
+    "username": "Username",
+    "password": "Password",
+    "button": "Login"
+  },
+  "addBook": {
+    "Add":"New",
+    "New Book!": "Add a New Book",
+    "title": "Title",
+    "author": "Author",
+    "author name": "Enter author name",
+    "genre": "Genre",
+    "publicationYear": "Publication Year",
+    "rating": "Rating",
+    "isBorrowed": "Is Borrowed",
+    "2025, 1, 1": "Enter publication date (YYYY)",
+    "0": "Enter rating (0-5)",
+    "addBook.adding": "Adding...",
+    "ADD BOOK": "Add Book",
+    "validationError": "Please fill in all fields correctly.",
+    "Book Is Added Successfully": "Book added successfully!",
+    "Book Is Not Added!!!": "Book could not be added!"
+  
+  },
   "bookList": {
     "title": "Books List",
     "author": "Author",
@@ -30,7 +39,9 @@
     "show_details": "Show Details",
     "hide_details": "Hide Details",
     "publication_year": "Publication Year"
-  }
-  
-  }
-  
+  },
+  "language": {
+  "english": "English",
+  "arabic": "Arabic"
+}
+}
