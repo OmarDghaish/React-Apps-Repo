@@ -15,11 +15,9 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 1rem;
 }
 
-/* Add Book Container */
-.add-book-container {
+.update-book-container {
   width: 100%;
   max-width: 400px;
   background-color: #fff;
@@ -27,62 +25,49 @@ body {
   padding: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #333;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
 }
 
-/* Heading */
-h2 {
+.update-heading {
   text-align: center;
   font-size: 1.5rem;
   color: #2ba5c0;
+  margin-bottom: 1.5rem;
   font-weight: bold;
 }
 
-/* Label Styles */
-label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #333;
-}
-
-/* Input Fields */
-input[type='text'],
-input[type='number'],
+input[type="text"],
+input[type="number"],
 textarea {
-  padding: 0.7rem;
-  font-size: 0.9rem;
+  padding: 0.8rem;
+  font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
   background-color: #f9f9f9;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
 }
 
-input[type='text']:focus,
-input[type='number']:focus,
+textarea {
+  resize: vertical;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
 textarea:focus {
   outline: none;
   border-color: #3498db;
   background-color: #eaf4ff;
 }
 
-/* Textarea */
-textarea {
-  resize: vertical;
-}
-
-/* Submit Button */
 button {
   padding: 0.8rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   background: linear-gradient(to right, #02c4ff, #00f435);
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 0.8rem;
+  margin-top: 1.2rem;
 }
 
 button:hover {
@@ -94,33 +79,20 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Error Message */
-.text-red-500 {
+.error-message {
   color: #e74c3c;
   font-size: 0.8rem;
   text-align: center;
-  margin-top: 0.8rem;
+  margin-top: 1rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .add-book-container {
+  .update-book-container {
     padding: 1rem;
   }
 
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  input[type='text'],
-  input[type='number'],
-  textarea {
-    padding: 0.6rem;
-    font-size: 0.8rem;
-  }
-
   button {
-    padding: 0.7rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }

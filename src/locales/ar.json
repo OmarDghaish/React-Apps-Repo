@@ -42,6 +42,16 @@
   "language": {
   "english": "انكليزي",
   "arabic": "عربي"
+},
+"updateBook": {
+  "Update Book": "تحديث الكتاب",
+  "Update": "تحديث",
+  "title": "العنوان",
+  "author": "المؤلف",
+  "genre": "النوع",
+  "publicationYear": "سنة النشر",
+  "rating": "التقييم",
+  "isBorrowed": "مستعار"
 }
   }
   

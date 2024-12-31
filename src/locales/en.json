@@ -43,5 +43,15 @@
   "language": {
   "english": "English",
   "arabic": "Arabic"
+},
+"updateBook": {
+  "Update Book": "Update Book",
+  "Update": "Update",
+  "title": "Title",
+  "author": "Author",
+  "genre": "Genre",
+  "publicationYear": "Publication Year",
+  "rating": "Rating",
+  "isBorrowed": "Is Borrowed"
 }
 }

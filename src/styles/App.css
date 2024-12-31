@@ -1,13 +1,24 @@
 /* App Layout */
-body,
-html {
-  height: 100%;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc; /* Light background color for the body */
+}
+
+/* App Container */
 .app-container {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100%;
 }
 
 /* Navigation Bar */
@@ -16,7 +27,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1.5rem;
+  padding: 0 2rem; /* Increased padding for better spacing */
   background-color: #0b3b5a;
   color: white;
   position: fixed;
@@ -29,13 +40,14 @@ nav {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap: 2rem; /* Increased gap for better spacing */
 }
 
 .nav-links li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1rem; /* Ensuring consistent font size */
   transition: color 0.3s ease;
 }
 
@@ -43,6 +55,7 @@ nav {
   color: #58aece;
 }
 
+/* Language Switcher */
 .language-switcher {
   display: flex;
   gap: 1rem;
@@ -53,22 +66,57 @@ nav {
   color: white;
   border: 1px solid white;
   border-radius: 4px;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem; /* Slightly larger padding for better click area */
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .language-button:hover {
   background-color: white;
-  color:#ffffff;
+  color: #0b3b5a; /* Change text color to dark blue on hover */
 }
 
 /* Main Content */
 main {
   margin-top: 4rem; /* Push content below the fixed nav */
   flex: 1;
-  padding: 1.5rem;
+  padding: 2rem; /* Increased padding for better spacing */
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #f4f7fc; /* Light background color to contrast with nav */
+  min-height: 100%;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 1rem; /* Reduce gap for smaller screens */
+  }
+
+  .language-button {
+    padding: 0.4rem 0.8rem; /* Adjust padding for smaller screens */
+  }
+
+  main {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0 1rem; /* Smaller padding for mobile */
+  }
+
+  .nav-links {
+    gap: 0.8rem; /* Reduce gap even more for mobile */
+  }
+
+  .language-button {
+    padding: 0.4rem 0.8rem; /* Adjust padding for mobile */
+  }
+
+  main {
+    padding: 0.8rem; /* Adjust padding for mobile */
+  }
 }

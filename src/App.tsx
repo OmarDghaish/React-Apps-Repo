@@ -5,6 +5,7 @@ import AddBookPage from './pages/AddBookPage';
 import LoginPage from './pages/LoginPage';
 import BookListPage from './pages/BooksListPage';
 import './styles/App.css';
+import UpdateBookPage from './pages/UpdateBookPage';
 
 const App: React.FC = () => {
   const { i18n } = useTranslation();
@@ -20,6 +21,9 @@ const App: React.FC = () => {
           <ul className="nav-links">
             <li>
               <Link to="/" className="hover:text-gray-400">{i18n.t('addBook.Add')}</Link>
+            </li>
+            <li>
+              <Link to="/update/1" className="hover:text-gray-400">{i18n.t('updateBook.Update')}</Link>
             </li>
             <li>
               <Link to="/books" className="hover:text-gray-400">{i18n.t('bookList.title')}</Link>
@@ -43,6 +47,7 @@ const App: React.FC = () => {
           <Route path="/" element={<AddBookPage />} />
           <Route path="/books" element={<BookListPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/update/:id" element={<UpdateBookPage />} />
         </Routes>
       </div>
     </Router>
