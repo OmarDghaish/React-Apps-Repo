@@ -1,22 +1,21 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const bodyParser = require('body-parser');
 
 const app = express();
 
 // Middleware
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost:27017/myLibraryApp', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-})
+mongoose.connect('mongodb://localhost:27017/myLibraryApp')
   .then(() => console.log('MongoDB connected'))
-  .catch((err) => console.error('MongoDB connection error:', err));
+  .catch((err) => {
+    console.error('MongoDB connection error:', err.message);
+    process.exit(1); // Exit if the connection fails
+  });
+
 
 // Book schema
 const bookSchema = new mongoose.Schema({
@@ -29,6 +28,21 @@ const bookSchema = new mongoose.Schema({
 });
 
 const Book = mongoose.model('Book', bookSchema);
+
+
+// Base Route
+app.get('/', (req, res) => {
+  res.send('Welcome to the Book Library API!');
+});
+
+// Routes
+// app.get('/books', async (req, res) => { try {
+//       const books = await Book.find();
+//       res.json(books);
+//     } catch (error) {
+//       console.error('Error fetching books:', error);
+//       res.status(500).json({ message: 'Failed to fetch books' });
+//     }}); 
 
 // Routes
 // Get all books
@@ -81,6 +95,33 @@ app.put('/books/:id', async (req, res) => {
     res.status(500).json({ message: 'Failed to update book' });
   }
 });
+
+// Create a new book
+app.post('/books', async (req, res) => {
+  const { title, author, genre, publicationYear, rating, isBorrowed } = req.body;
+
+  if (!title || !author || !genre || publicationYear == null || rating == null || isBorrowed == null) {
+    return res.status(400).json({ message: 'All fields are required' });
+  }
+
+  const newBook = new Book({
+    title,
+    author,
+    genre,
+    publicationYear,
+    rating,
+    isBorrowed,
+  });
+
+  try {
+    await newBook.save();
+    res.status(201).json(newBook); // Return the created book
+  } catch (error) {
+    console.error('Error creating book:', error);
+    res.status(500).json({ message: 'Failed to create book' });
+  }
+});
+
 
 // Start server
 const PORT = process.env.PORT || 5000;
