@@ -24,28 +24,40 @@ const UpdateBookPage: React.FC = () => {
     rating: 0,
     isBorrowed: false,
   });
-
   const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log('Book ID:', id); // Check if the ID is correctly retrieved
     const fetchBook = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/books/${id}`);
+        const response = await axios.get<Book>(`http://localhost:5000/books/${id}`);
         setBook(response.data);
-      } catch (error) {
+      } catch (error: any) {
         console.error('Error fetching book:', error);
+        setErrorMessage('Failed to fetch book details. Please try again later.');
+      } finally {
+        setIsLoading(false);
       }
     };
     fetchBook();
   }, [id]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setBook((prevBook) => ({
-      ...prevBook,
-      [name]: name === 'isBorrowed' ? value === 'true' : value,
-    }));
+    const { name, value, type } = e.target;
+
+    if (type === 'checkbox') {
+      // Cast the target as HTMLInputElement to get the 'checked' property
+      const checked = (e.target as HTMLInputElement).checked;
+      setBook((prevBook) => ({
+        ...prevBook,
+        [name]: checked,  // Use the checked value for checkboxes
+      }));
+    } else {
+      setBook((prevBook) => ({
+        ...prevBook,
+        [name]: value,
+      }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -53,11 +65,16 @@ const UpdateBookPage: React.FC = () => {
     try {
       await axios.put(`http://localhost:5000/books/${id}`, book);
       navigate('/books');
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error updating book:', error);
-      setErrorMessage('Failed to update book. Please try again.');
+      const message = error.response?.data?.message || 'Failed to update book. Please try again.';
+      setErrorMessage(message);
     }
   };
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="update-book-page">
@@ -102,6 +119,8 @@ const UpdateBookPage: React.FC = () => {
               name="publicationYear"
               value={book.publicationYear}
               onChange={handleInputChange}
+              min="1500"
+              max={new Date().getFullYear()}
               required
             />
           </label>
@@ -112,19 +131,20 @@ const UpdateBookPage: React.FC = () => {
               name="rating"
               value={book.rating}
               onChange={handleInputChange}
+              min="0"
+              max="5"
+              step="0.1"
               required
             />
           </label>
           <label>
             Is Borrowed:
-            <select
+            <input
+              type="checkbox"
               name="isBorrowed"
-              value={book.isBorrowed ? 'true' : 'false'}
+              checked={book.isBorrowed}
               onChange={handleInputChange}
-            >
-              <option value="true">Yes</option>
-              <option value="false">No</option>
-            </select>
+            />
           </label>
           <button type="submit">Update Book</button>
         </form>

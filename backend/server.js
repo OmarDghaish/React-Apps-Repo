@@ -58,6 +58,10 @@ app.get('/books', async (req, res) => {
 
 // Get a single book by ID
 app.get('/books/:id', async (req, res) => {
+  if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+    return res.status(400).json({ message: 'Invalid book ID format' });
+  }
+
   try {
     const book = await Book.findById(req.params.id);
     if (!book) {
@@ -72,6 +76,10 @@ app.get('/books/:id', async (req, res) => {
 
 // Update a book by ID
 app.put('/books/:id', async (req, res) => {
+  if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+    return res.status(400).json({ message: 'Invalid book ID format' });
+  }
+
   const { title, author, genre, publicationYear, rating, isBorrowed } = req.body;
 
   if (!title || !author || !genre || publicationYear == null || rating == null || isBorrowed == null) {
@@ -95,6 +103,7 @@ app.put('/books/:id', async (req, res) => {
     res.status(500).json({ message: 'Failed to update book' });
   }
 });
+
 
 // Create a new book
 app.post('/books', async (req, res) => {
